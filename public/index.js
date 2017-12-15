@@ -25,10 +25,16 @@ const populateList = function(countries) {
  countries.forEach(function(country) {
 
   const liName = document.createElement('li');
+  const liRegion = document.createElement('li');
+  const liPopulation = document.createElement('li');
 
   liName.innerText = country.name;
+  liRegion.innerText = country.region;
+  liPopulation.innerText = country.population;
 
   countriesList.appendChild(liName);
+  liName.appendChild(liRegion);
+  liRegion.appendChild(liPopulation);
  });
 }
 
