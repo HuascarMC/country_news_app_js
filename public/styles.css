@@ -52,6 +52,9 @@ footer {
 img {
  height: 220px;
  width: 420px;
+ margin: auto;
+ display: block;
+ margin-top: 40px;
 }
 
 #main-map {
@@ -60,4 +63,11 @@ img {
   margin: auto;
   display: block;
   margin-top: 40px;
+}
+
+#country-details {
+ margin: auto;
+ margin-left: 90px;
+ display: block;
+ margin-top: 40px;
 }
