@@ -24,6 +24,10 @@ const requestComplete = function() {
 populateDropMenu(countries);
 };
 
+const populateCountriesArray = function(country) {
+ countries.push(country);
+}
+
 const populateDropMenu = function(countries) {
  const countriesList = document.querySelector('#countries-list');
  countries.forEach(function(country, index) {
@@ -34,24 +38,23 @@ const populateDropMenu = function(countries) {
   name.value = index;
 
   countriesList.appendChild(name);
+
+  populateCountriesArray(country);
  });
 };
 
-const populateCountriesArray = function(country) {
- countries.push(country);
-}
 
 const handleSelect = function() {
- displayImage();
+ const countryIndex = this.value;
+ console.log(countryIndex);
+ displayImage(countryIndex);
 };
 
-
-
-const displayImage = function() {
+const displayImage = function(index) {
  const flagContainer = document.querySelector('#flag');
  const flagImage = document.createElement('img');
 
- flagImage.src = countries[this.value].flag;
+ flagImage.src = countries[index].flag;
 
  flagContainer.appendChild(flagImage);
 };
