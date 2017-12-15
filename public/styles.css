@@ -36,7 +36,7 @@ aside {
 }
 
 #content-wrapper div {
- background-color: gold;
+ /* background-color: gold; */
 }
 
 main {
@@ -52,4 +52,9 @@ footer {
 img {
  height: 220px;
  width: 420px;
+}
+
+#main-map {
+  width: 500px;
+  height: 500px;
 }
