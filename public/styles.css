@@ -57,4 +57,7 @@ img {
 #main-map {
   width: 500px;
   height: 500px;
+  margin: auto;
+  display: block;
+  margin-top: 40px;
 }
