@@ -1,4 +1,5 @@
 let countries = [];
+let country = 'none';
 var app = function(){
  const url = 'https://restcountries.eu/rest/v2/all';
  makeRequest(url, requestComplete);
@@ -45,6 +46,8 @@ const populateDropMenu = function(countries) {
 
 const handleSelect = function() {
  const countryIndex = this.value;
+ country = countries[countryIndex];
+
  displayImage(countryIndex);
  displayDetails(countryIndex);
 };
