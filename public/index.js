@@ -43,7 +43,6 @@ const populateDropMenu = function(countries) {
  });
 };
 
-
 const handleSelect = function() {
  const countryIndex = this.value;
  console.log(countryIndex);
@@ -52,7 +51,7 @@ const handleSelect = function() {
 
 const displayImage = function(index) {
  const flagContainer = document.querySelector('#flag');
- const flagImage = document.createElement('img');
+ const flagImage = document.querySelector('img');
 
  flagImage.src = countries[index].flag;
 
