@@ -15,6 +15,14 @@ var initialize = function(){
    var center = { lat: country.latlng[0], lng: country.latlng[1] };
    mainMap.setLocation(center);
    mainMap.addMarker(center)
+   const url2 = 'https://newsapi.org/v2/top-headlines?q=' + `${country.name}` + '&apiKey=526a0f58261340d58af4d6569c12859e';
+
+   // 'https://newsapi.org/v2/top-headlines?' +
+   //          'q=' + `${country.name}` + '&'
+   //          'apiKey=526a0f58261340d58af4d6569c12859e';
+   //      https://newsapi.org/v2/top-headlines?q=trump&apiKey={API_KEY}
+
+    makeRequest(url2, requestNewsComplete);
   };
 
   const countriesList = document.querySelector('#countries-list');

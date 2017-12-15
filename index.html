@@ -3,12 +3,19 @@
  <head>
   <link rel="stylesheet" href="reset.css" type="text/css">
   <link rel="stylesheet" href="styles.css" type="text/css">
+
   <script src='index.js'></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="mapWrapper.js"></script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <script src="pieChart.js"></script>
   <script src='app.js'></script>
+  <script type="text/javascript" src="'https://newsapi.org/v2/top-headlines?' +
+          'sources=bbc-news&' +
+          'apiKey=526a0f58261340d58af4d6569c12859e'" 526a0f58261340d58af4d6569c12859e>
+
+  </script>
+
   <meta charset="utf-8">
   <title>One column layout</title>
  </head>
@@ -50,8 +57,13 @@
 
    </div>
     <footer>
+     <div id="news-article">
 
-<div id="pieChart" width="400" height="400"></div>
+     </div>
+     <div id="description">
+
+     </div>
+
     </footer>
      </div>
  </body>
