@@ -14,8 +14,25 @@ const makeRequest = function(url, callback) {
 
 const requestComplete = function() {
  if(this.status !== 200) return;
-const jsonString = this.responseText;
-const countries = JSON.parse(jsonString);
+ const jsonString = this.responseText;
+ const countries = JSON.parse(jsonString);
+
+populateList(countries);
 }
+
+const populateList = function(countries) {
+ const countriesList = document.querySelector('#countries-list');
+ countries.forEach(function(country) {
+
+  const liCountry = document.createElement('li');
+
+  country.innerText = country.name;
+
+  countriesList.appendChild(liCountry);
+ })
+
+}
+
+
 
 document.addEventListener('DOMContentLoaded', app);
