@@ -24,13 +24,12 @@ const populateList = function(countries) {
  const countriesList = document.querySelector('#countries-list');
  countries.forEach(function(country) {
 
-  const liCountry = document.createElement('li');
+  const liName = document.createElement('li');
 
-  country.innerText = country.name;
+  liName.innerText = country.name;
 
-  countriesList.appendChild(liCountry);
- })
-
+  countriesList.appendChild(liName);
+ });
 }
 
 
