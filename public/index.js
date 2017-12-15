@@ -1,9 +1,10 @@
+let countries = [];
 var app = function(){
  const url = 'https://restcountries.eu/rest/v2/all';
  makeRequest(url, requestComplete);
 
  const dropMenu = document.querySelector('#countries-list');
- dropMenu.addEventListener('change', displayImage);
+ dropMenu.addEventListener('change', handleSelect);
 }
 
 const makeRequest = function(url, callback) {
@@ -25,28 +26,21 @@ populateDropMenu(countries);
 
 const populateDropMenu = function(countries) {
  const countriesList = document.querySelector('#countries-list');
- countries.forEach(function(country) {
+ countries.forEach(function(country, index) {
 
   const name = document.createElement('option');
-  // const liRegion = document.createElement('option');
-  // const liPopulation = document.createElement('option');
 
   name.innerHTML = country.name;
-  name.value = country;
-  // liRegion.innerText = country.region;
-  // liPopulation.innerText = country.population;
+  name.value = index;
 
   countriesList.appendChild(name);
-  // liName.appendChild(liRegion);
-  // liRegion.appendChild(liPopulation);
-
  });
 }
 
 const displayImage = function(country) {
  const flagContainer = document.querySelector('#flag');
  const flagImage = document.createElement('img');
- 
+
  flagImage.src = country.flag;
 
  flagContainer.appendChild(flagImage);
