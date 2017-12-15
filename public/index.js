@@ -5,7 +5,7 @@ var app = function(){
 
  const dropMenu = document.querySelector('#countries-list');
  dropMenu.addEventListener('change', handleSelect);
-}
+};
 
 const makeRequest = function(url, callback) {
  const request = new XMLHttpRequest();
@@ -14,7 +14,7 @@ const makeRequest = function(url, callback) {
  request.send();
 
  request.addEventListener('load', callback);
-}
+};
 
 const requestComplete = function() {
  if(this.status !== 200) return;
@@ -22,7 +22,7 @@ const requestComplete = function() {
  const countries = JSON.parse(jsonString);
 
 populateDropMenu(countries);
-}
+};
 
 const populateDropMenu = function(countries) {
  const countriesList = document.querySelector('#countries-list');
@@ -35,16 +35,28 @@ const populateDropMenu = function(countries) {
 
   countriesList.appendChild(name);
  });
+};
+
+const populateCountriesArray = function(country) {
+ countries.push(country);
 }
 
-const displayImage = function(country) {
+const handleSelect = function() {
+ displayImage();
+};
+
+
+
+const displayImage = function() {
  const flagContainer = document.querySelector('#flag');
  const flagImage = document.createElement('img');
 
- flagImage.src = country.flag;
+ flagImage.src = countries[this.value].flag;
 
  flagContainer.appendChild(flagImage);
-}
+};
+
+
 
 
 
