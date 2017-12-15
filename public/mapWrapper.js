@@ -31,6 +31,10 @@ MapWrapper.prototype.addInfoWindow = function (coords, text) {
   });
 }
 
+MapWrapper.prototype.setLocation = function(coords) {
+ this.googleMap.setCenter(coords);
+}
+
 MapWrapper.prototype.geoLocate = function () {
   navigator.geolocation.getCurrentPosition(function (position) {
     var center = { lat: position.coords.latitude, lng: position.coords.longitude };
@@ -38,4 +42,3 @@ MapWrapper.prototype.geoLocate = function () {
     this.addMarker(center);
   }.bind(this));
 }
-
