@@ -46,6 +46,7 @@ const populateDropMenu = function(countries) {
 const handleSelect = function() {
  const countryIndex = this.value;
  displayImage(countryIndex);
+ displayDetails(countryIndex);
 };
 
 const displayImage = function(index) {
@@ -54,9 +55,21 @@ const displayImage = function(index) {
 
  flagImage.src = countries[index].flag;
 
- flagContainer.appendChild(flagImage);
 };
 
+const displayDetails = function(index) {
+ const detailsContainer = document.querySelector('#details-list');
+ const liName = document.querySelector('#name');
+ const liRegion = document.querySelector('#region');
+ const liPopulation = document.querySelector('#population');
+ const liBorders = document.querySelector('#borders');
+
+ console.log(countries[index].name);
+ liName.innerHTML = countries[index].name;
+ liRegion.innerHTML = countries[index].region;
+ liPopulation.innerHTML = countries[index].population;
+ liBorders.innerHTML = countries[index].borders;
+}
 
 
 
