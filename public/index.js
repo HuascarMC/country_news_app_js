@@ -24,17 +24,18 @@ const populateList = function(countries) {
  const countriesList = document.querySelector('#countries-list');
  countries.forEach(function(country) {
 
-  const liName = document.createElement('li');
-  const liRegion = document.createElement('li');
-  const liPopulation = document.createElement('li');
+  const name = document.createElement('option');
+  // const liRegion = document.createElement('option');
+  // const liPopulation = document.createElement('option');
 
-  liName.innerText = country.name;
-  liRegion.innerText = country.region;
-  liPopulation.innerText = country.population;
+  name.innerHTML = country.name;
+  name.value = country;
+  // liRegion.innerText = country.region;
+  // liPopulation.innerText = country.population;
 
-  countriesList.appendChild(liName);
-  liName.appendChild(liRegion);
-  liRegion.appendChild(liPopulation);
+  countriesList.appendChild(name);
+  // liName.appendChild(liRegion);
+  // liRegion.appendChild(liPopulation);
  });
 }
 
